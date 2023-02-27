@@ -59,13 +59,13 @@ fi
 if [ $ecu == "148" ]; then
 
 #copy file to RPI
-    scp $dir_118 $rpi_add$rpi_version.local:~/openblt/Host/
+    scp $dir_148 $rpi_add$rpi_version.local:~/openblt/Host/
 
 #connect to RPI
 #RPI commands in EOF marker
     ssh $rpi_add$rpi_version.local <<EOF
       cd ~/openblt/Host/
-      ./BootCommander -s=xcp -t=xcp_can -d=can1 -b=250000 -tid=118 -xid=1 -t1=1000 -t3=2000 -t4=10000 -t5=1000 -t7=2000 gridania-realtime.srec
+      ./BootCommander -s=xcp -t=xcp_can -d=can1 -b=250000 -tid=148 -xid=1 -t1=1000 -t3=2000 -t4=10000 -t5=1000 -t7=2000 gridania-telematic.srec
 EOF
     exit 1
 fi
