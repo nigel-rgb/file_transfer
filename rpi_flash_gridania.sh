@@ -2,7 +2,7 @@
 
 # add 118 srec directory
 dir_118="/a/gitclone/Gridania_RealTime118/GCC/release/gridania-realtime.srec"
-dir_148="/a/gitclone/Gridania_Telematic148/GCC/release/gridania-telematic.srec"
+dir_148="/a/gitclone/Gridania_Telematic148/Release-App/TelematicECU.srec"
 
 # add rpi address
 rpi_add="pi@raspberrypi-"
@@ -65,7 +65,7 @@ if [ $ecu == "148" ]; then
 #RPI commands in EOF marker
     ssh $rpi_add$rpi_version.local <<EOF
       cd ~/openblt/Host/
-      ./BootCommander -s=xcp -t=xcp_can -d=can1 -b=250000 -tid=148 -xid=1 -t1=1000 -t3=2000 -t4=10000 -t5=1000 -t7=2000 gridania-telematic.srec
+      ./BootCommander -s=xcp -t=xcp_can -d=can1 -b=250000 -tid=148 -xid=1 -t1=1000 -t3=2000 -t4=10000 -t5=1000 -t7=2000 TelematicECU.srec
 EOF
     exit 1
 fi
